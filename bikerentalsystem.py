@@ -97,22 +97,20 @@ class hour_day_week:
                     main.bymore()
 
 
-class hapen:
+def check(time_limit):
+    obj = hour_day_week
 
-    def happenagain(time_limit):
-        obj = hour_day_week
+    if time_limit == "hour":
+        obj.hourly_basis()
 
-        if time_limit == "hour":
-            obj.hourly_basis()
+    elif time_limit == "day":
+        obj.day_basis()
 
-        elif time_limit == "day":
-            obj.day_basis()
+    elif time_limit == "week":
+        obj.weekly_basis()
 
-        elif time_limit == "week":
-            obj.weekly_basis()
-
-        else:
-            print("this bike is not available")
+    else:
+        print("this bike is not available")
 
 
 while not main.done:
@@ -126,13 +124,13 @@ while not main.done:
 
             if ask_bike in main.available_bikes.keys():
                 num_of_bikes_want = int(
-                    input("how many bikes do you want :: "))
+                    input("How many bikes would you like to rent :: "))
 
                 if num_of_bikes_want > main.available_bikes[ask_bike]:
                     print("this much bikes are not available ")
                 else:
                     time_limit = input("time you need :: ")
-                    hapen.happenagain(time_limit)
+                    check(time_limit)
 
             else:
                 print("retype the bike name :")
