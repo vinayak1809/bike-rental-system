@@ -129,7 +129,7 @@ while not main.done:
                 if num_of_bikes_want > main.available_bikes[ask_bike]:
                     print("this much bikes are not available ")
                 else:
-                    time_limit = input("time you need :: ")
+                    time_limit = input("time you need :: ").lower()
                     check(time_limit)
 
             else:
