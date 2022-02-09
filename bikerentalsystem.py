@@ -1,21 +1,21 @@
 
 class main:
-    print()
+
     available_bikes = {
         "kawasaki": 8, "ninja": 3, "unicorn": 5, "pulsur": 7
     }
 
-    print("available bikes ::")
-    for a, b in (available_bikes.items()):
-        print(a + ": " + str(b))
+    print("\navailable bikes ::\n")
+
+    for bikes, quantity_of_bikes in (available_bikes.items()):
+        print(bikes + ": " + str(quantity_of_bikes))
 
     rupee = u'\u20B9'
     cost = {"hour": rupee+"400", "day": rupee+"1500", "weak": rupee+"4500"}
-    print(" ")
 
-    print("cost of bikes :: \n")
-    for a, b in (cost.items()):
-        print(a + ": " + str(b))
+    print("\ncost of bikes :: \n")
+    for time_span, money in (cost.items()):
+        print(time_span + ": " + str(money))
 
     print(" ")
 
@@ -139,17 +139,19 @@ while not main.done:
     elif return_rent == "return":
         bike_return = input("bike name to be returned :: ").lower()
         num_of_bikes_to_be_return = int(
-            input("num of bikes to be returned :: "))
+            input("num of bikes to be returned : "))
 
         for bikes in main.available_bikes.keys():
             if bike_return == bikes:
                 main.available_bikes[bikes] = main.available_bikes[bikes] + \
                     num_of_bikes_to_be_return
-                print("available bikes ::")
-                for a, b in (main.available_bikes.items()):
-                    print(a + ": " + str(b))
 
-        print("thankyou :) ")
+                print("\navailable bikes ::")
+
+                for bikes, quatity_of_bikes in (main.available_bikes.items()):
+                    print(bikes + ": " + str(quatity_of_bikes))
+
+        print("\nthankyou :) ")
         exit()
     else:
         print("type again return/rent")
