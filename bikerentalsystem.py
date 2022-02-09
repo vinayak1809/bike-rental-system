@@ -24,7 +24,7 @@ class main:
     def bymore():
         print()
         ask = input("do u want to rent more bikes(Y/N) : ").upper()
-        if ask == "Y":
+        if ask == "Y" or "YES":
             main.done = False
         else:
             exit()
